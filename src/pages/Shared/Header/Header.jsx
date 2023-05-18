@@ -19,21 +19,21 @@ const Header = () => {
         <Link to="/">Home</Link>
       </li>
       <li>
-        <Link to="/blog">Blog</Link>
-      </li>
-      <li>
         <Link to="/allToys">All Toys</Link>
       </li>
-      {
-        user && <>
+      {user && (
+        <>
           <li>
-            <Link to='/myToys'>My Toys</Link>
-        </li>
+            <Link to="/myToys">My Toys</Link>
+          </li>
           <li>
-            <Link to='/addToys'>Add a Toy</Link>
-        </li>
+            <Link to="/addToys">Add a Toy</Link>
+          </li>
         </>
-      }
+      )}
+      <li>
+        <Link to="/blog">Blog</Link>
+      </li>
     </>
   );
   return (
