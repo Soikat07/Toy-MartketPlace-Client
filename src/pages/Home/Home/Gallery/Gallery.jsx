@@ -16,10 +16,10 @@ const Gallery = () => {
   return (
     <div className='my-10'>
       <div className='text-center'>
-        <h3 className='text-6xl font-bold'>Our Gallery</h3>
+        <h3 className='text-6xl font-bold text-orange-500'>Our Gallery</h3>
         <p className='text-gray-600 font-semibold text-2xl mt-2'>Here are some beautiful collections</p>
       </div>
-      <div className='grid grid-cols-4 mt-10'>
+      <div className='grid grid-cols-4 mt-10 border-4 border-slate-600 p-3 gap-1'>
         <img src={gallery1} alt="" />
         <img src={gallery2} alt="" />
         <img src={gallery3} alt="" />
