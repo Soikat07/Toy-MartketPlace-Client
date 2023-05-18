@@ -1,8 +1,18 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { Link } from 'react-router-dom';
 import logo from '../../../assets/logo.png'
+import { AuthContext } from '../../../providers/AuthProvider';
 
 const Header = () => {
+  const { user, logOut } = useContext(AuthContext);
+  const handleLogout = () => {
+    logOut()
+    .then()
+      .catch(error => {
+        console.log(error);
+    })
+  }
+
   const navItems = (
     <>
       <li>
@@ -14,6 +24,16 @@ const Header = () => {
       <li>
         <Link to="/allToys">All Toys</Link>
       </li>
+      {
+        user && <>
+          <li>
+            <Link to='/myToys'>My Toys</Link>
+        </li>
+          <li>
+            <Link to='/addToys'>Add a Toy</Link>
+        </li>
+        </>
+      }
     </>
   );
   return (
@@ -52,10 +72,25 @@ const Header = () => {
         <div className="navbar-center hidden lg:flex">
           <ul className="menu menu-horizontal px-1">{navItems}</ul>
         </div>
-        <div className="navbar-end"></div>
-        <Link className='me-5' to="/login">
-          <button>Login</button>
-        </Link>
+        <div className="navbar-end">
+          {user ? (
+            <span className="flex space-x-2">
+              <img
+                title={user.displayName}
+                className="w-10 rounded-full"
+                src={user.photoURL}
+                alt=""
+              />
+              <button onClick={handleLogout} className="">
+                Logout
+              </button>
+            </span>
+          ) : (
+            <Link className="me-5" to="/login">
+              <button>Login</button>
+            </Link>
+          )}
+        </div>
       </div>
     </nav>
   );
