@@ -7,7 +7,7 @@ const ErrorPage = () => {
   return (
     <section className="flex items-center bg-gray-100 text-gray-900 py-5">
       <div className="container flex flex-col items-center justify-center px-5 mx-auto">
-        <img className="h-[80vh] w-[60vw]" src={errorImage} alt="" />
+        <img className="h-[80vh]" src={errorImage} alt="" />
         <div className="max-w-md text-center">
           <p className="text-xl font-semibold md:text-2xl mb-5 mt-2">
             {error?.message}
