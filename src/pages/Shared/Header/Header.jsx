@@ -1,5 +1,5 @@
 import React, { useContext } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, NavLink } from 'react-router-dom';
 import logo from '../../../assets/logo.png'
 import { AuthContext } from '../../../providers/AuthProvider';
 
@@ -16,23 +16,23 @@ const Header = () => {
   const navItems = (
     <>
       <li>
-        <Link to="/">Home</Link>
+        <NavLink className={({ isActive }) => (isActive ? 'active' : '')} to="/">Home</NavLink >
       </li>
       <li>
-        <Link to="/allToys">All Toys</Link>
+        <NavLink className={({ isActive }) => (isActive ? 'active' : '')} to="/allToys">All Toys</NavLink >
       </li>
       {user && (
         <>
           <li>
-            <Link to="/myToys">My Toys</Link>
+            <NavLink className={({ isActive }) => (isActive ? 'active' : '')} to="/myToys">My Toys</NavLink >
           </li>
           <li>
-            <Link to="/addToys">Add a Toy</Link>
+            <NavLink className={({ isActive }) => (isActive ? 'active' : '')} to="/addToys">Add a Toy</NavLink >
           </li>
         </>
       )}
       <li>
-        <Link to="/blog">Blog</Link>
+        <NavLink className={({ isActive }) => (isActive ? 'active' : '')} to="/blog">Blog</NavLink >
       </li>
     </>
   );
@@ -59,18 +59,23 @@ const Header = () => {
             </label>
             <ul
               tabIndex={0}
-              className="menu menu-compact dropdown-content mt-3 p-2 shadow bg-base-100 rounded-box w-52"
+              className="menu menu-compact dropdown-content mt-4 py-2 shadow bg-base-100 rounded-box w-52 text-slate-600 font-bold"
             >
               {navItems}
             </ul>
           </div>
           <Link to="/" className="btn btn-ghost normal-case text-xl">
             <img className="w-20" src={logo} alt="" />
-            <h3 className="">ToyWheelers</h3>
+            <h3 className="font-bold text-2xl">
+              <span className="text-orange-600">Toy</span>
+              <span className="text-slate-700">Wheelers</span>
+            </h3>
           </Link>
         </div>
         <div className="navbar-center hidden lg:flex">
-          <ul className="menu menu-horizontal px-1">{navItems}</ul>
+          <ul className="menu menu-horizontal px-1 text-slate-600 text-lg font-bold">
+            {navItems}
+          </ul>
         </div>
         <div className="navbar-end">
           {user ? (
@@ -81,13 +86,18 @@ const Header = () => {
                 src={user.photoURL}
                 alt=""
               />
-              <button onClick={handleLogout} className="">
+              <button
+                onClick={handleLogout}
+                className="font-bold text-lg text-slate-600 hover:bg-slate-200 px-3 py-2 rounded-lg"
+              >
                 Logout
               </button>
             </span>
           ) : (
             <Link className="me-5" to="/login">
-              <button>Login</button>
+              <button className="font-bold text-lg text-slate-600 hover:bg-slate-200 px-3 py-2 rounded-lg">
+                Login
+              </button>
             </Link>
           )}
         </div>
