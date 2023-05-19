@@ -11,58 +11,35 @@ const ShopCategory = () => {
           You can select toys with category wise
         </p>
       </div>
-      <Tabs>
+      <Tabs className='w-3/4 mx-auto font-semibold text-xl'>
+      {/* <TabList>
+        <Tab>Car Toy Category</Tab>
+      </TabList> */}
         <TabList>
-          <Tab>Sports Toy Car</Tab>
-          <Tab>Regular Toy Car</Tab>
-          <Tab>Police Toy Car</Tab>
+          <Tab>Sports Car</Tab>
+          <Tab>Truck Car</Tab>
+          <Tab>Regular Car</Tab>
+          <Tab>Police Car</Tab>
         </TabList>
 
-        {/* Category-1 */}
+        {/*Sub Category-1 */}
         <TabPanel>
-          <div className="w-3/4 mx-auto">
-            <div className="card card-side bg-base-100 shadow-xl mb-10">
-              <figure>
-                <img
-                  src="/images/stock/photo-1635805737707-575885ab0820.jpg"
-                  alt="Movie"
-                />
-              </figure>
-              <div className="card-body">
-                <h2 className="card-title">New movie is released!</h2>
-                <p>Click the button to watch on Jetflix app.</p>
-                <div className="card-actions justify-end">
-                  <button className="btn btn-primary">Watch</button>
-                </div>
-              </div>
-            </div>
-
-            <div className="card card-side bg-base-100 shadow-xl">
-              <figure>
-                <img
-                  src="/images/stock/photo-1635805737707-575885ab0820.jpg"
-                  alt="Movie"
-                />
-              </figure>
-              <div className="card-body">
-                <h2 className="card-title">New movie is released!</h2>
-                <p>Click the button to watch on Jetflix app.</p>
-                <div className="card-actions justify-end">
-                  <button className="btn btn-primary">Watch</button>
-                </div>
-              </div>
-            </div>
-          </div>
+          <h2>Any content 1</h2>
         </TabPanel>
 
-        {/* Category-2 */}
+        {/*Sub Category-2 */}
         <TabPanel>
           <h2>Any content 2</h2>
         </TabPanel>
 
-        {/* Category-3 */}
+        {/*Sub Category-3 */}
         <TabPanel>
           <h2>Any content 3</h2>
+        </TabPanel>
+
+        {/*Sub Category-4 */}
+        <TabPanel>
+          <h2>Any content 4</h2>
         </TabPanel>
       </Tabs>
     </div>

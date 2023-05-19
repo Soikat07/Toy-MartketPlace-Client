@@ -5,30 +5,41 @@ import Home from "../pages/Home/Home/Home";
 import Login from "../pages/Login/Login/Login";
 import Registration from "../pages/Login/Registration/Registration";
 import Blog from "../pages/Blog/Blog";
+import AllToys from "../pages/AllToys/AllToys";
+import SingleToy from "../pages/SingleToyDetails/SingleToy";
 
 const router = createBrowserRouter([
   {
     path: '/',
-    element:<Main/>,
+    element: <Main />,
     errorElement: <ErrorPage />,
     children: [
       {
         path: '/',
-        element:<Home/>
+        element: <Home />,
+      },
+      {
+        path: 'allToys',
+        element: <AllToys />,
+        loader: ()=> fetch('http://localhost:5000/toys')
+      },
+      {
+        path: 'toy/:id',
+        element:<SingleToy></SingleToy>
       },
       {
         path: 'blog',
-        element:<Blog/>
+        element: <Blog />,
       },
       {
         path: 'login',
-        element:<Login/>
+        element: <Login />,
       },
       {
         path: 'registration',
-        element:<Registration/>
-      }
-    ]
-  }
-])
+        element: <Registration />,
+      },
+    ],
+  },
+]);
 export default router;
