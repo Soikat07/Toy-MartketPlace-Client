@@ -21,11 +21,12 @@ const router = createBrowserRouter([
       {
         path: 'allToys',
         element: <AllToys />,
-        loader: ()=> fetch('http://localhost:5000/toys')
+        loader: () => fetch('http://localhost:5000/toys'),
       },
       {
         path: 'toy/:id',
-        element:<SingleToy></SingleToy>
+        element: <SingleToy></SingleToy>,
+        loader: ({ params }) => fetch(`http://localhost:5000/toys/${params.id}`),
       },
       {
         path: 'blog',
