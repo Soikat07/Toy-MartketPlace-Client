@@ -1,8 +1,22 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { Tab, Tabs, TabList, TabPanel } from 'react-tabs';
 import 'react-tabs/style/react-tabs.css';
+import TabData from './TabData';
 
 const ShopCategory = () => {
+  const [toys, setToys] = useState([]);
+  const [tab,setTab]=useState('Sports Car')
+  
+  useEffect(() => {
+    fetch(`http://localhost:5000/${tab}`)
+      .then(res => res.json())
+      .then(data => setToys(data));
+  }, [tab]);
+  
+  const handleTab = category => {
+    setTab(category);
+  }
+
   return (
     <div className="mb-10 text-center">
       <div className="mb-8">
@@ -11,35 +25,46 @@ const ShopCategory = () => {
           You can select toys with category wise
         </p>
       </div>
-      <Tabs className='w-3/4 mx-auto font-semibold text-xl'>
-      {/* <TabList>
-        <Tab>Car Toy Category</Tab>
-      </TabList> */}
+      <Tabs className="w-3/4 mx-auto font-semibold text-xl">
         <TabList>
-          <Tab>Sports Car</Tab>
-          <Tab>Truck Car</Tab>
-          <Tab>Regular Car</Tab>
-          <Tab>Police Car</Tab>
+          <Tab onClick={() => handleTab('Sports Car')}>Sports Car</Tab>
+          <Tab onClick={() => handleTab('Truck Car')}>Truck Car</Tab>
+          <Tab onClick={() => handleTab('Regular Car')}>Regular Car</Tab>
+          <Tab onClick={() => handleTab('Police Car')}>Police Car</Tab>
         </TabList>
 
         {/*Sub Category-1 */}
         <TabPanel>
-          <h2>Any content 1</h2>
+          <div className="grid grid-cols-2 mt-8">
+            {toys.slice(0, 2).map(toy => (
+              <TabData toy={toy} key={toy._id} />
+            ))}
+          </div>
         </TabPanel>
-
         {/*Sub Category-2 */}
         <TabPanel>
-          <h2>Any content 2</h2>
+          <div className="grid grid-cols-2 mt-8">
+            {toys.slice(0, 2).map(toy => (
+              <TabData toy={toy} key={toy._id} />
+            ))}
+          </div>
         </TabPanel>
 
         {/*Sub Category-3 */}
         <TabPanel>
-          <h2>Any content 3</h2>
+          <div className="grid grid-cols-2 mt-8">
+            {toys.slice(0, 2).map(toy => (
+              <TabData toy={toy} key={toy._id} />
+            ))}
+          </div>
         </TabPanel>
-
         {/*Sub Category-4 */}
         <TabPanel>
-          <h2>Any content 4</h2>
+          <div className="grid grid-cols-2 mt-8">
+            {toys.slice(0, 2).map(toy => (
+              <TabData toy={toy} key={toy._id} />
+            ))}
+          </div>
         </TabPanel>
       </Tabs>
     </div>
