@@ -7,7 +7,7 @@ const AllToys = () => {
   const [searchText, setSearchText] = useState('');
 
   const handleSearch = () => {
-    fetch(`http://localhost:5000/toys/${searchText}`)
+    fetch(`http://localhost:5000/allToys/${searchText}`)
       .then(res => res.json())
       .then(data => {
         console.log(data);
