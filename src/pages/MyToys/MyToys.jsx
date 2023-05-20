@@ -20,6 +20,7 @@ const MyToys = () => {
           {/* head */}
           <thead>
             <tr>
+              <th>#</th>
               <th>Seller Name</th>
               <th>Toy Name</th>
               <th>Sub Category</th>
@@ -30,8 +31,9 @@ const MyToys = () => {
             </tr>
           </thead>
           <tbody>
-            {myToys.map(myToy => (
+            {myToys.map((myToy,index) => (
               <tr className="hover" key={myToy._id}>
+                <td>{index+1}</td>
                 <td>{myToy.seller_name}</td>
                 <td>{myToy.toy_name}</td>
                 <td>{myToy.sub_category}</td>
