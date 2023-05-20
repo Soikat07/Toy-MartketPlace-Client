@@ -8,7 +8,7 @@ const PrivateRoute = ({children}) => {
   if (loading) {
     return (
       <div
-        className="radial-progress text-center text-blue-600"
+        className="radial-progress text-center text-orange-600"
         style={{ '--value': 70 }}>
         100%</div>
     );

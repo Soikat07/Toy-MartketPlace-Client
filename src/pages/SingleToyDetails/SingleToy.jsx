@@ -23,7 +23,10 @@ const SingleToy = () => {
         <div>
           <h1 className="text-2xl font-bold">Toy Name: {toy_name}</h1>
           <h3 className="font-semibold my-1">Seller: {seller_name}</h3>
-          <h3>{seller_email && seller_email}</h3>
+            <p>
+              <span className="font-semibold">Email:</span>
+              {seller_email}
+            </p>
           <p className="my-1">
             <span className="font-semibold">Price:</span> ${price}
           </p>
@@ -38,7 +41,7 @@ const SingleToy = () => {
             <span className="font-semibold">Description:</span> {description}
           </p>
           <p>
-            <span className='font-semibold my-2'>Ratings: {rating}</span>
+            <span className="font-semibold my-2">Ratings: {rating}</span>
             <Rating
               className="text-yellow-400"
               placeholderRating={rating}
