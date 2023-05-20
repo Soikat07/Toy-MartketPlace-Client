@@ -1,5 +1,6 @@
 import React, { useContext, useEffect, useState } from 'react';
 import { AuthContext } from '../../providers/AuthProvider';
+import { Link } from 'react-router-dom';
 
 const MyToys = () => {
   const { user } = useContext(AuthContext);
@@ -50,23 +51,26 @@ const MyToys = () => {
             </tr>
           </thead>
           <tbody>
-            {myToys.map((myToy,index) => (
+            {myToys.map((myToy, index) => (
               <tr className="hover" key={myToy._id}>
-                <td>{index+1}</td>
+                <td>{index + 1}</td>
                 <td>{myToy.seller_name}</td>
                 <td>{myToy.toy_name}</td>
                 <td>{myToy.sub_category}</td>
                 <td>${myToy.price}</td>
                 <td>{myToy.available_quantity}</td>
                 <td>
-                  <button className="hover:px-4 py-3 rounded-lg hover:bg-orange-600 hover:text-white">
-                    Update
-                  </button>
+                  <Link to={`/updateToy/${myToy._id}`}>
+                    <button className="hover:px-4 py-3 rounded-lg hover:bg-orange-600 hover:text-white">
+                      Update
+                    </button>
+                  </Link>
                 </td>
                 <td>
                   <button
-                    onClick={()=>handleDelete(myToy._id)}
-                    className="hover:px-4 py-3 rounded-lg hover:bg-red-600 hover:text-white">
+                    onClick={() => handleDelete(myToy._id)}
+                    className="hover:px-4 py-3 rounded-lg hover:bg-red-600 hover:text-white"
+                  >
                     Delete
                   </button>
                 </td>
