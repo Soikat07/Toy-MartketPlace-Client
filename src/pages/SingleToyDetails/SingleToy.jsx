@@ -14,7 +14,7 @@ const SingleToy = () => {
     rating,
     available_quantity,
     description,
-    seller_email
+    email
   } = singleToyData;
   return (
     <div className="hero min-h-screen bg-base-200">
@@ -25,7 +25,7 @@ const SingleToy = () => {
           <h3 className="font-semibold my-1">Seller: {seller_name}</h3>
             <p>
               <span className="font-semibold">Email:</span>
-              {seller_email}
+              {email}
             </p>
           <p className="my-1">
             <span className="font-semibold">Price:</span> ${price}

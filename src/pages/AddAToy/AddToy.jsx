@@ -19,14 +19,14 @@ const AddToy = () => {
 
     const toy = {
       seller_name: sellerName,
-      seller_email: sellerEmail,
+      email: sellerEmail,
       toy_name: toyName,
       toy_picture: photoURL,
       price: price,
       rating: rating,
+      available_quantity:quantity,
       sub_category: category,
       description: description,
-      available_quantity:quantity,
     };
     console.log(toy);
     fetch('http://localhost:5000/addToy', {
@@ -39,7 +39,7 @@ const AddToy = () => {
       .then(res => res.json())
       .then(data => {
         console.log(data);
-        if (insertedId > 0) {
+        if (data.insertedId) {
           alert('Toy added Successfully')
         }
       });
@@ -116,7 +116,7 @@ const AddToy = () => {
               <span className="label-text">Rating</span>
             </label>
             <input
-              type="number"
+              type="text"
               placeholder="between 0-5"
               name="rating"
               className="input input-bordered"
