@@ -61,7 +61,7 @@ const ShopCategory = () => {
         </TabPanel>
         {/*Sub Category-4 */}
         <TabPanel>
-          <div className="grid grid-cols-2 mt-8">
+          <div className="grid grid-cols-1 lg:grid-cols-2 mt-8 space-x-4">
             {toys.slice(0, 2).map(toy => (
               <TabData toy={toy} key={toy._id} />
             ))}
