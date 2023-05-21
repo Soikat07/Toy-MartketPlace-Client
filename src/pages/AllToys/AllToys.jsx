@@ -1,13 +1,17 @@
 import React, { useState } from 'react';
 import { Link, useLoaderData } from 'react-router-dom';
+import useTitle from '../../hooks/useTItle';
 
 const AllToys = () => {
   const loadedToys = useLoaderData();
   const [toys, setToys] = useState(loadedToys);
   const [searchText, setSearchText] = useState('');
+  useTitle('All Toys')
 
   const handleSearch = () => {
-    fetch(`http://localhost:5000/allToys/${searchText}`)
+    fetch(
+      `https://toy-market-place-server-three.vercel.app/allToys/${searchText}`
+    )
       .then(res => res.json())
       .then(data => {
         console.log(data);

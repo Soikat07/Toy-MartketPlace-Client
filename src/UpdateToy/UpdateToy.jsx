@@ -3,8 +3,19 @@ import { useLoaderData } from 'react-router-dom';
 
 const UpdateToy = () => {
   const loadedData = useLoaderData();
-  const { _id,seller_name, email, toy_name, toy_picture, price, rating, available_quantity, sub_category, description } = loadedData;
-  
+  const {
+    _id,
+    seller_name,
+    email,
+    toy_name,
+    toy_picture,
+    price,
+    rating,
+    available_quantity,
+    sub_category,
+    description,
+  } = loadedData;
+
   const handleUpdate = event => {
     event.preventDefault();
     const form = event.target;
@@ -30,19 +41,18 @@ const UpdateToy = () => {
       description: description,
     };
     console.log(updateToy);
-    fetch(`http://localhost:5000/updateToy/${_id}`, {
+    fetch(`https://toy-market-place-server-three.vercel.app/updateToy/${_id}`, {
       method: 'PUT',
       headers: {
-        'content-type':'application/json'
+        'content-type': 'application/json',
       },
-      body:JSON.stringify(updateToy)
+      body: JSON.stringify(updateToy),
     })
-    .then(res => res.json())
+      .then(res => res.json())
       .then(data => {
-      console.log(data);
-
-    })
-  }
+        console.log(data);
+      });
+  };
   return (
     <div>
       <form onSubmit={handleUpdate} className="p-20 border my-5 bg-zinc-100">

@@ -2,6 +2,7 @@ import React from 'react';
 import { useLoaderData } from 'react-router-dom';
 import { FaRegStar, FaStar } from 'react-icons/fa';
 import Rating from 'react-rating';
+import useTitle from '../../hooks/useTItle';
 
 const SingleToy = () => {
   const singleToyData = useLoaderData();
@@ -16,6 +17,8 @@ const SingleToy = () => {
     description,
     email
   } = singleToyData;
+  useTitle('Toy Details')
+
   return (
     <div className="hero min-h-screen bg-base-200">
       <div className="hero-content flex-col lg:flex-row">

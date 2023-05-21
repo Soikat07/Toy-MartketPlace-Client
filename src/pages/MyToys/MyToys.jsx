@@ -1,38 +1,42 @@
 import React, { useContext, useEffect, useState } from 'react';
 import { AuthContext } from '../../providers/AuthProvider';
 import { Link } from 'react-router-dom';
+import useTitle from '../../hooks/useTItle';
 
 const MyToys = () => {
   const { user } = useContext(AuthContext);
   const [myToys, setMyToys] = useState([]);
+  useTitle('My Toys')
 
   useEffect(() => {
-    fetch(`http://localhost:5000/myToys/${user.email}`)
+    fetch(
+      `https://toy-market-place-server-three.vercel.app/myToys/${user.email}`
+    )
       .then(data => data.json())
       .then(data => {
         console.log(data);
         setMyToys(data);
       });
-  }, [user])
-  
+  }, [user]);
+
   const handleDelete = id => {
     console.log(id);
     const proceed = confirm('Are you sure want to delete?');
     if (proceed) {
-      fetch(`http://localhost:5000/myToys/${id}`, {
-        method: "DELETE"
+      fetch(`https://toy-market-place-server-three.vercel.app/myToys/${id}`, {
+        method: 'DELETE',
       })
         .then(res => res.json())
         .then(data => {
-        console.log(data);
+          console.log(data);
           if (data.deletedCount > 0) {
             alert('Toy Deleted Successfully');
             const remaining = myToys.filter(toy => toy._id !== id);
             setMyToys(remaining);
-        }
-      })
+          }
+        });
     }
-  }
+  };
   return (
     <div className="max-w-screen-xl mx-auto">
       <div className="overflow-x-auto my-10">

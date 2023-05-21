@@ -1,8 +1,10 @@
 import React, { useContext } from 'react';
 import { AuthContext } from '../../providers/AuthProvider';
+import useTitle from '../../hooks/useTItle';
 
 const AddToy = () => {
   const { user } = useContext(AuthContext);
+  useTitle('Add a Toy')
 
   const handleAddToy = event => {
     event.preventDefault();
@@ -24,26 +26,26 @@ const AddToy = () => {
       toy_picture: photoURL,
       price: price,
       rating: rating,
-      available_quantity:quantity,
+      available_quantity: quantity,
       sub_category: category,
       description: description,
     };
     console.log(toy);
-    fetch('http://localhost:5000/addToy', {
-      method: "POST",
+    fetch('https://toy-market-place-server-three.vercel.app/addToy', {
+      method: 'POST',
       headers: {
-        'content-type': 'application/json'
+        'content-type': 'application/json',
       },
-      body: JSON.stringify(toy)
+      body: JSON.stringify(toy),
     })
       .then(res => res.json())
       .then(data => {
         console.log(data);
         if (data.insertedId) {
-          alert('Toy added Successfully')
+          alert('Toy added Successfully');
         }
       });
-  }
+  };
   return (
     <div>
       <form onSubmit={handleAddToy} className="p-20 border my-5 bg-zinc-100">
@@ -139,7 +141,11 @@ const AddToy = () => {
             <label className="label">
               <span className="label-text">Toy Category</span>
             </label>
-            <select required name='toyCategory'className='p-3 border-2 rounded-lg'>
+            <select
+              required
+              name="toyCategory"
+              className="p-3 border-2 rounded-lg"
+            >
               <option value="Sports Car">Sports Car</option>
               <option value="Truck Car">Truck Car</option>
               <option value="Police Car">Police Car</option>
@@ -150,8 +156,14 @@ const AddToy = () => {
             <label className="label">
               <span className="label-text">Toy Description</span>
             </label>
-            <textarea name="description" cols="20" rows="15" placeholder='start here_'
-              required className='border rounded-md p-2'></textarea>
+            <textarea
+              name="description"
+              cols="20"
+              rows="15"
+              placeholder="start here_"
+              required
+              className="border rounded-md p-2"
+            ></textarea>
           </div>
         </div>
 

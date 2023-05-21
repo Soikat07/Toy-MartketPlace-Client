@@ -5,17 +5,17 @@ import TabData from './TabData';
 
 const ShopCategory = () => {
   const [toys, setToys] = useState([]);
-  const [tab,setTab]=useState('Sports Car')
-  
+  const [tab, setTab] = useState('Sports Car');
+
   useEffect(() => {
-    fetch(`http://localhost:5000/${tab}`)
+    fetch(`https://toy-market-place-server-three.vercel.app/${tab}`)
       .then(res => res.json())
       .then(data => setToys(data));
   }, [tab]);
-  
+
   const handleTab = category => {
     setTab(category);
-  }
+  };
 
   return (
     <div className="mb-10 text-center">

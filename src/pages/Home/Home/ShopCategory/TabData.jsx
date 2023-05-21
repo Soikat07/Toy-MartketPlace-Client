@@ -1,6 +1,7 @@
 import React from 'react';
 import { FaRegStar, FaStar } from 'react-icons/fa';
 import Rating from 'react-rating';
+import { Link } from 'react-router-dom';
 
 const TabData = ({ toy }) => {
   const { toy_picture, toy_name,price, rating } = toy;
@@ -26,9 +27,10 @@ const TabData = ({ toy }) => {
           </p>
         </div>
         <div className="card-actions">
-          <button className="bg-orange-600 text-white rounded-xl py-2
+          <Link to={`/toys/${toy._id}`}><button className="bg-orange-600 text-white rounded-xl py-2
           px-6
           ">View Details</button>
+          </Link>
         </div>
       </div>
     </div>

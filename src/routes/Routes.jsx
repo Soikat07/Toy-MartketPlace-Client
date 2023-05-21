@@ -1,16 +1,16 @@
-import { createBrowserRouter } from "react-router-dom";
-import ErrorPage from "../pages/Shared/ErrorPage/ErrorPage";
-import Main from "../layouts/Main";
-import Home from "../pages/Home/Home/Home";
-import Login from "../pages/Login/Login/Login";
-import Registration from "../pages/Login/Registration/Registration";
-import Blog from "../pages/Blog/Blog";
-import AllToys from "../pages/AllToys/AllToys";
-import SingleToy from "../pages/SingleToyDetails/SingleToy";
-import PrivateRoute from "./PrivateRoute";
-import AddToy from "../pages/AddAToy/AddToy";
-import MyToys from "../pages/MyToys/MyToys";
-import UpdateToy from "../UpdateToy/UpdateToy";
+import { createBrowserRouter } from 'react-router-dom';
+import ErrorPage from '../pages/Shared/ErrorPage/ErrorPage';
+import Main from '../layouts/Main';
+import Home from '../pages/Home/Home/Home';
+import Login from '../pages/Login/Login/Login';
+import Registration from '../pages/Login/Registration/Registration';
+import Blog from '../pages/Blog/Blog';
+import AllToys from '../pages/AllToys/AllToys';
+import SingleToy from '../pages/SingleToyDetails/SingleToy';
+import PrivateRoute from './PrivateRoute';
+import AddToy from '../pages/AddAToy/AddToy';
+import MyToys from '../pages/MyToys/MyToys';
+import UpdateToy from '../UpdateToy/UpdateToy';
 
 const router = createBrowserRouter([
   {
@@ -25,7 +25,8 @@ const router = createBrowserRouter([
       {
         path: 'allToys',
         element: <AllToys />,
-        loader: () => fetch('http://localhost:5000/toys'),
+        loader: () =>
+          fetch('https://toy-market-place-server-three.vercel.app/toys'),
       },
       {
         path: 'myToys',
@@ -51,7 +52,9 @@ const router = createBrowserRouter([
           </PrivateRoute>
         ),
         loader: ({ params }) =>
-          fetch(`http://localhost:5000/toys/${params.id}`),
+          fetch(
+            `https://toy-market-place-server-three.vercel.app/toys/${params.id}`
+          ),
       },
       {
         path: 'toys/:id',
@@ -61,7 +64,9 @@ const router = createBrowserRouter([
           </PrivateRoute>
         ),
         loader: ({ params }) =>
-          fetch(`http://localhost:5000/toys/${params.id}`),
+          fetch(
+            `https://toy-market-place-server-three.vercel.app/toys/${params.id}`
+          ),
       },
       {
         path: 'blog',
