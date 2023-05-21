@@ -56,8 +56,8 @@ const MyToys = () => {
   }
 
   return (
-    <div className="max-w-screen-xl mx-auto min-h-[80vh] mt-24">
-      <div className="text-end mb-5">
+    <div className="w-screen lg:max-w-screen-xl mx-auto min-h-[80vh] mt-24">
+      <div className="lg:text-end mb-5">
         <div className="dropdown dropdown-left dropdown-end">
           <label
             tabIndex={0}
@@ -78,7 +78,7 @@ const MyToys = () => {
           </ul>
         </div>
       </div>
-      <div className="overflow-x-auto">
+      <div className="lg:overflow-x-auto">
         <table className="table w-full">
           {/* head */}
           <thead>

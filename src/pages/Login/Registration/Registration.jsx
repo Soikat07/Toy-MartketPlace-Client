@@ -1,9 +1,11 @@
 import React, { useContext, useState } from 'react';
 import { Link } from 'react-router-dom';
+import Lottie from 'lottie-react';
 import { AuthContext } from '../../../providers/AuthProvider';
 import { updateProfile } from 'firebase/auth';
 import useTitle from '../../../hooks/useTItle';
 import Swal from 'sweetalert2';
+import registrationLottie from '../../../assets/38435-register.json'
 
 
 const Registration = () => {
@@ -50,11 +52,11 @@ const Registration = () => {
     }
   }
   return (
-    <div className="hero min-h-screen bg-base-200">
+    <div className="hero min-h-screen bg-base-200 my-5">
       <div className="hero-content flex-col lg:flex-row">
-        {/* <div className="mr-12">
-          <img src={} alt="" />
-        </div> */}
+        <div className="w-1/2 mr-12">
+          <Lottie animationData={registrationLottie} loop={true} />
+        </div>
         <div className="card flex-shrink-0 w-full max-w-sm shadow-2xl bg-base-100">
           <div className="card-body">
             <form onSubmit={handleSignUp}>

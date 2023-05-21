@@ -25,7 +25,7 @@ const FeaturedToys = () => {
           Do not miss the current offers until the end of the month
         </p>
       </div>
-      <div className="grid grid-cols-5">
+      <div className="grid grid-cols-1 lg:grid-cols-5">
         {featureToy.map(toy => (
           <FeatureCard toy={toy} key={toy._id} />
         ))}

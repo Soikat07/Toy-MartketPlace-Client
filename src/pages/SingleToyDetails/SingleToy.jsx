@@ -20,9 +20,9 @@ const SingleToy = () => {
   useTitle('Toy Details')
 
   return (
-    <div className="hero min-h-screen bg-base-200">
+    <div className="hero lg:min-h-screen bg-base-200 mb-14">
       <div className="hero-content flex-col lg:flex-row">
-        <img src={toy_picture} className="max-w-xl rounded-lg shadow-2xl" />
+        <img src={toy_picture} className="lg:max-w-xl rounded-lg shadow-2xl" />
         <div>
           <h1 className="text-2xl font-bold">Toy Name: {toy_name}</h1>
           <h3 className="font-semibold my-1">Seller: {seller_name}</h3>

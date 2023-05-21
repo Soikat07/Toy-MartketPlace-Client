@@ -35,7 +35,7 @@ const AllToys = () => {
           Search
         </button>
       </div>
-      <div className="overflow-x-auto my-10">
+      <div className="lg:overflow-x-auto my-10">
         <table className="table w-full">
           {/* head */}
           <thead>

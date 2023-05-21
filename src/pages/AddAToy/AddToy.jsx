@@ -54,9 +54,9 @@ const AddToy = () => {
   };
   return (
     <div>
-      <form onSubmit={handleAddToy} className="p-20 border my-5 bg-zinc-100">
-        <h2 className="text-2xl my-5">Add a toy by adding some data</h2>
-        <div className="grid grid-rows-4 grid-flow-col gap-4">
+      <form onSubmit={handleAddToy} className="p-10 lg:p-20 border my-5 bg-zinc-100">
+        <h2 className="text-xl lg:text-2xl my-5">Add a toy by adding some data</h2>
+        <div className="grid lg:grid-rows-4 lg:grid-flow-col gap-4">
           <div className="form-control">
             <label className="label">
               <span className="label-text">Seller Name</span>
@@ -158,14 +158,14 @@ const AddToy = () => {
               <option value="Regular Car">Regular Car</option>
             </select>
           </div>
-          <div className="form-control row-span-full">
+          <div className="form-control lg:row-span-full">
             <label className="label">
               <span className="label-text">Toy Description</span>
             </label>
             <textarea
               name="description"
-              cols="20"
-              rows="15"
+              cols="30"
+              rows="10"
               placeholder="start here_"
               required
               className="border rounded-md p-2"

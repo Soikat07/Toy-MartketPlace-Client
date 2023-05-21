@@ -21,7 +21,7 @@ const Gallery = () => {
           Here are some beautiful collections
         </p>
       </div>
-      <div className="grid grid-cols-4 mt-10 border-4 border-slate-600 p-3 gap-1">
+      <div className="grid grid-cols-3 lg:grid-cols-4 mt-10 border-4 border-slate-600 p-3 gap-1">
         <img src={gallery1} alt="" />
         <img src={gallery2} alt="" />
         <img src={gallery3} alt="" />

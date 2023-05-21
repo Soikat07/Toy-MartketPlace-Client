@@ -26,7 +26,7 @@ const ShopCategory = () => {
           You can select toys with category wise
         </p>
       </div>
-      <Tabs className="w-3/4 mx-auto font-semibold text-xl">
+      <Tabs className="w-3/4 mx-auto font-semibold lg:text-xl">
         <TabList>
           <Tab onClick={() => handleTab('Regular Car')}>Regular Car</Tab>
           <Tab onClick={() => handleTab('Sports Car')}>Sports Car</Tab>
@@ -36,7 +36,7 @@ const ShopCategory = () => {
 
         {/*Sub Category-1 */}
         <TabPanel>
-          <div className="grid grid-cols-2 mt-8">
+          <div className="grid grid-cols-1 lg:grid-cols-2 mt-8 space-y-4">
             {toys.slice(0, 2).map(toy => (
               <TabData toy={toy} key={toy._id} />
             ))}
@@ -44,7 +44,7 @@ const ShopCategory = () => {
         </TabPanel>
         {/*Sub Category-2 */}
         <TabPanel>
-          <div className="grid grid-cols-2 mt-8">
+          <div className="grid grid-cols-1 lg:grid-cols-2 mt-8 space-y-4">
             {toys.slice(0, 2).map(toy => (
               <TabData toy={toy} key={toy._id} />
             ))}
@@ -53,7 +53,7 @@ const ShopCategory = () => {
 
         {/*Sub Category-3 */}
         <TabPanel>
-          <div className="grid grid-cols-2 mt-8">
+          <div className="grid grid-cols-1 lg:grid-cols-2 mt-8 space-y-4">
             {toys.slice(0, 2).map(toy => (
               <TabData toy={toy} key={toy._id} />
             ))}

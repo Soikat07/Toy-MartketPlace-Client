@@ -2,6 +2,8 @@ import React, { useContext, useState } from 'react';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../../../providers/AuthProvider';
 import useTitle from '../../../hooks/useTItle';
+import Lottie from 'lottie-react';
+import loginLottie from '../../../assets/121421-login.json'
 
 const Login = () => {
   const { logIn,googleSignIn } = useContext(AuthContext);
@@ -44,11 +46,11 @@ const Login = () => {
       });
   };
   return (
-    <div className="hero min-h-screen bg-base-200">
+    <div className="hero min-h-screen bg-base-200 my-10">
       <div className="hero-content flex-col lg:flex-row">
-        {/* <div className="mr-12">
-          <img src={} alt="" />
-        </div> */}
+        <div className="mr-12">
+          <Lottie animationData={loginLottie} loop={true} />
+        </div>
         <div className="card flex-shrink-0 w-full max-w-sm shadow-2xl bg-base-100">
           <div className="card-body">
             <form onSubmit={handleLogIn}>
@@ -84,18 +86,18 @@ const Login = () => {
                 </p>
               </div>
               <div className="form-control mt-2">
-                <button className="btn bg-[#FF3811] border-none">Login</button>
+                <button className="btn bg-orange-600 border-none">Login</button>
               </div>
             </form>
             <p className="text-center mt-2">
               New to ToyWheelers?
-              <span className="text-[#FF3811]">
+              <span className="text-orange-600">
                 <Link to="/registration">Sign Up</Link>
               </span>
             </p>
             <div className="divider">OR</div>
             <div className="form-control">
-              <button onClick={handleGoogleSignIn} className="btn">
+              <button onClick={handleGoogleSignIn} className="btn bg-orange-600 border-none">
                 Login with Google
               </button>
             </div>

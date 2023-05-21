@@ -66,29 +66,29 @@ const Header = () => {
           </div>
           <Link to="/" className="btn btn-ghost normal-case text-xl">
             <img className="w-20" src={logo} alt="" />
-            <h3 className="font-bold text-2xl">
+            <h3 className="font-bold lg:text-2xl">
               <span className="text-orange-600">Toy</span>
               <span className="text-slate-700">Wheelers</span>
             </h3>
           </Link>
         </div>
         <div className="navbar-center hidden lg:flex">
-          <ul className="menu menu-horizontal px-1 text-slate-600 text-lg font-bold">
+          <ul className="menu menu-horizontal px-1 text-slate-600 font-bold">
             {navItems}
           </ul>
         </div>
-        <div className="navbar-end">
+        <div className="sm:relative navbar-end">
           {user ? (
-            <span className="flex space-x-2">
+            <span className="lg:flex lg:space-x-2">
               <img
                 title={user.displayName}
-                className="w-10 rounded-full"
+                className="ms-8 w-10 rounded-full"
                 src={user.photoURL}
                 alt=""
               />
               <button
                 onClick={handleLogout}
-                className="font-bold text-lg text-slate-600 hover:bg-slate-200 px-3 py-2 rounded-lg"
+                className="font-bold  text-slate-600 hover:bg-slate-200 px-3 py-2 rounded-lg"
               >
                 Logout
               </button>

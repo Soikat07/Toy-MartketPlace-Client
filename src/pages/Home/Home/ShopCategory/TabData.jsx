@@ -7,7 +7,7 @@ const TabData = ({ toy }) => {
   const { toy_picture, toy_name,price, rating } = toy;
   return (
     <div
-      className="card card-compact w-3/4 mx-auto bg-base-100 shadow-xl"
+      className="card card-compact lg:w-3/4 mx-auto bg-base-100 shadow-xl"
       data-aos="zoom-in-up"
       data-aos-duration="2000"
     >

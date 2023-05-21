@@ -13,13 +13,13 @@ const Contact = () => {
         data-aos-duration="3000"
       >
         <h1 className="text-4xl">Get In Touch</h1>
-        <p className="w-1/2 mx-auto text-gray-400">
+        <p className="w-3/4 mt-2 lg:w-1/2 mx-auto text-gray-400">
           Lorem, ipsum dolor sit amet consectetur adipisicing elit. Expedita
           quaerat unde quam dolor culpa veritatis inventore, aut commodi eum
           veniam vel.
         </p>
       </div>
-      <div className="grid grid-cols-3 mt-8 w-3/4 mx-auto space-x-5">
+      <div className="grid grid-cols-1 lg:grid-cols-3 mt-8 w-3/4 mx-auto space-y-5 lg:space-x-5">
         <div
           className="text-start border px-14 py-10 bg-rose-100 rounded-md"
           data-aos="fade-right"
