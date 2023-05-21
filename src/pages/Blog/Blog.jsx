@@ -5,7 +5,7 @@ const Blog = () => {
   useTitle('Blog');
 
   return (
-    <div className="bg-slate-200 max-w-screen-xl mx-auto p-4">
+    <div className="bg-slate-200 max-w-screen-xl mx-auto p-4 mb-10">
         <h1 className="text-center text-4xl m-6">*This is blog page*</h1>
       <div>
         <h3 className="text-xl font-semibold mb-4">

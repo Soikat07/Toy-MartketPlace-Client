@@ -37,7 +37,7 @@ const Header = () => {
     </>
   );
   return (
-    <nav>
+    <>
       <div className="navbar bg-base-100 my-3">
         <div className="navbar-start">
           <div className="dropdown">
@@ -102,7 +102,7 @@ const Header = () => {
           )}
         </div>
       </div>
-    </nav>
+    </>
   );
 };
 

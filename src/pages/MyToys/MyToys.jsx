@@ -38,7 +38,7 @@ const MyToys = () => {
     }
   };
   return (
-    <div className="max-w-screen-xl mx-auto">
+    <div className="max-w-screen-xl mx-auto min-h-[80vh]">
       <div className="overflow-x-auto my-10">
         <table className="table w-full">
           {/* head */}
