@@ -3,6 +3,8 @@ import { Link } from 'react-router-dom';
 import { AuthContext } from '../../../providers/AuthProvider';
 import { updateProfile } from 'firebase/auth';
 import useTitle from '../../../hooks/useTItle';
+import Swal from 'sweetalert2';
+
 
 const Registration = () => {
   const { createUser } = useContext(AuthContext);
@@ -24,6 +26,12 @@ const Registration = () => {
         const loggedUser = result.user;
         profile(result.user);
         console.log(loggedUser);
+        Swal.fire({
+          title: 'Success',
+          text: 'Creating User Successful',
+          icon: 'success',
+          confirmButtonText: 'Ok',
+        });
         form.reset();
       })
       .catch(error => {
