@@ -7,7 +7,8 @@ const Banner = () => {
       <div
         className="absolute top-8 text-white w-96 space-y-2
        border-4 border-slate-700 p-6"
-        data-aos="fade-up-right"
+        data-aos="fade-up-left"
+        data-aos-duration="3000"
       >
         <h2 className=" text-5xl font-bold">A PLACE FOR DREAMING CAR</h2>
         <p>

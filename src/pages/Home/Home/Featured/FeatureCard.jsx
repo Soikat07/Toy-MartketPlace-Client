@@ -5,7 +5,12 @@ import Rating from 'react-rating';
 const FeatureCard = ({toy}) => {
   const { name, image, price, rating, stock } = toy;
   return (
-    <div className="card bg-base-100 shadow-xl border">
+    <div
+      className="card bg-base-100 shadow-xl border"
+      data-aos="flip-right"
+      data-aos-easing="ease-out-cubic"
+      data-aos-duration="2000"
+    >
       <figure className="px-10 pt-10">
         <img src={image} alt="Shoes" className="rounded-xl" />
       </figure>
@@ -27,7 +32,9 @@ const FeatureCard = ({toy}) => {
           <p className="text-lg text-red-700">${price}</p>
         </div>
         <div className="card-actions my-auto">
-          <button className="bg-yellow-400 px-6 py-2 rounded-full text-sm">Add To Cart</button>
+          <button className="bg-yellow-400 px-6 py-2 rounded-full text-sm">
+            Add To Cart
+          </button>
         </div>
       </div>
     </div>

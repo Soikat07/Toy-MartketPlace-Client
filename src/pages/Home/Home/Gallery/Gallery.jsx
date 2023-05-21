@@ -14,12 +14,14 @@ import gallery12 from '../../../../assets/gallery/gallery12.jpg'
 
 const Gallery = () => {
   return (
-    <div className='my-20'>
-      <div className='text-center'>
-        <h3 className='text-4xl font-bold text-orange-500'>Our Gallery</h3>
-        <p className='text-gray-600 font-semibold text-xl'>Here are some beautiful collections</p>
+    <div className="my-20">
+      <div className="text-center" data-aos="fade-left" data-aos-duration="1000">
+        <h3 className="text-4xl font-bold text-orange-500">Our Gallery</h3>
+        <p className="text-gray-600 font-semibold text-xl">
+          Here are some beautiful collections
+        </p>
       </div>
-      <div className='grid grid-cols-4 mt-10 border-4 border-slate-600 p-3 gap-1'>
+      <div className="grid grid-cols-4 mt-10 border-4 border-slate-600 p-3 gap-1">
         <img src={gallery1} alt="" />
         <img src={gallery2} alt="" />
         <img src={gallery3} alt="" />
