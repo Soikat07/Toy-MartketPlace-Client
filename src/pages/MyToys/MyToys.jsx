@@ -6,18 +6,19 @@ import useTitle from '../../hooks/useTItle';
 const MyToys = () => {
   const { user } = useContext(AuthContext);
   const [myToys, setMyToys] = useState([]);
+  const [value, setValue] = useState('');
   useTitle('My Toys')
 
   useEffect(() => {
     fetch(
-      `https://toy-market-place-server-three.vercel.app/myToys/${user.email}`
+      `http://localhost:5000/myToys?email=${user.email}&sort=${value}`
     )
       .then(data => data.json())
       .then(data => {
         console.log(data);
         setMyToys(data);
       });
-  }, [user]);
+  }, [user,value]);
 
   const handleDelete = id => {
     console.log(id);
@@ -37,9 +38,35 @@ const MyToys = () => {
         });
     }
   };
+
+  const handleSort = value => {
+    setValue(value);
+  }
+
   return (
-    <div className="max-w-screen-xl mx-auto min-h-[80vh]">
-      <div className="overflow-x-auto my-10">
+    <div className="max-w-screen-xl mx-auto min-h-[80vh] mt-24">
+      <div className="text-end mb-5">
+        <div className="dropdown dropdown-left dropdown-end">
+          <label
+            tabIndex={0}
+            className="bg-orange-600 rounded-lg p-2 text-white hover:bg-orange-500"
+          >
+            Sort by Price
+          </label>
+          <ul
+            tabIndex={0}
+            className="dropdown-content menu bg-base-200 shadow rounded-box w-28"
+          >
+            <li>
+              <a onClick={() => handleSort('Ascending')}>Ascending</a>
+            </li>
+            <li>
+              <a onClick={() => handleSort('Descending')}>Descending</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <div className="overflow-x-auto">
         <table className="table w-full">
           {/* head */}
           <thead>
