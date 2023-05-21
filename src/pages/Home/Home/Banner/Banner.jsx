@@ -4,8 +4,11 @@ const Banner = () => {
   return (
     <div className="relative">
       <img className="h-[90vh] w-full" src={banner} alt="" />
-      <div className="absolute top-8 text-white w-96 space-y-2
-       border-4 border-slate-700 p-6">
+      <div
+        className="absolute top-8 text-white w-96 space-y-2
+       border-4 border-slate-700 p-6"
+        data-aos="fade-up-right"
+      >
         <h2 className=" text-5xl font-bold">A PLACE FOR DREAMING CAR</h2>
         <p>
           Lorem, ipsum dolor sit amet consectetur adipisicing elit. Facilis

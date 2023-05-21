@@ -11,7 +11,7 @@ const MyToys = () => {
 
   useEffect(() => {
     fetch(
-      `http://localhost:5000/myToys?email=${user.email}&sort=${value}`
+      `https://toy-market-place-server-three.vercel.app/myToys?email=${user.email}&sort=${value}`
     )
       .then(data => data.json())
       .then(data => {
