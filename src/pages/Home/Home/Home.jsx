@@ -4,6 +4,7 @@ import Gallery from './Gallery/Gallery';
 import ShopCategory from './ShopCategory/ShopCategory';
 import useTitle from '../../../hooks/useTItle';
 import FeaturedToys from './Featured/FeaturedToys';
+import Contact from './Contact/Contact';
 
 const Home = () => {
   useTitle('Home')
@@ -12,7 +13,8 @@ const Home = () => {
       <Banner />
       <Gallery />
       <ShopCategory />
-      <FeaturedToys/>
+      <FeaturedToys />
+      <Contact/>
     </div>
   );
 };
